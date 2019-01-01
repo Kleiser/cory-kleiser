@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
-import { PostModule } from './post.module';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {postsEndpoint} from '../endpoints/endpoints';
 
 @Injectable({
-  providedIn: PostModule
+  providedIn: 'root'
 })
 export class PostService {
 
