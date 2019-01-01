@@ -1,3 +1,7 @@
-<p>
-  post-listing works!
-</p>
+<h1 data-test="post-listing-title">Posts</h1>
+<ul>
+  <li *ngFor="let post of postList" data-test="listed-post">
+    <h3>{{post.title}}</h3>
+    <p>{{post.text}}</p>
+  </li>
+</ul>

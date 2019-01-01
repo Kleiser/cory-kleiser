@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import {PostModule} from './post/post.module';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import {PostModule} from './post/post.module';
     NotFoundComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     PostModule,
     AppRoutingModule
