@@ -10,7 +10,12 @@ export class PostService {
 
   constructor(private http: HttpClient) { }
 
-  fetchPosts(): Observable<any> {
+  fetchPosts(): Observable<Object> {
     return this.http.get(postsEndpoint);
   }
+
+  fetchPost(id: string): Observable<Object> {
+    return this.http.get(`${postsEndpoint}/${id}`);
+  }
+
 }
