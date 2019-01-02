@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { PostListingComponent } from './post-listing.component';
 import {PostService} from '../post.service';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
+import {RouterTestingModule} from '@angular/router/testing';
 
 describe('PostListingComponent', () => {
   let page: Page;
@@ -12,7 +13,7 @@ describe('PostListingComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ HttpClientTestingModule ],
+      imports: [ HttpClientTestingModule, RouterTestingModule ],
       declarations: [ PostListingComponent ],
       providers: [ PostService ]
     });

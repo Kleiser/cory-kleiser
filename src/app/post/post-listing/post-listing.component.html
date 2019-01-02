@@ -1,7 +1,7 @@
 <h1 data-test="post-listing-title">Posts</h1>
 <ul>
   <li *ngFor="let post of postList" data-test="listed-post">
-    <h3>{{post.title}}</h3>
+    <h3><a [routerLink]="[post.id]">{{post.title}}</a></h3>
     <p>{{post.text}}</p>
   </li>
 </ul>
