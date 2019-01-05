@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import {PostListingComponent} from './post/post-listing/post-listing.component';
+import {Routes, RouterModule, PreloadAllModules} from '@angular/router';
 import {NotFoundComponent} from './not-found/not-found.component';
 
 const routes: Routes = [
+  {
+    path: 'posts',
+    loadChildren: './posts/posts.module#PostsModule'
+  },
   {
     path: '',
     redirectTo: 'posts',
@@ -16,7 +19,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    preloadingStrategy: PreloadAllModules
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

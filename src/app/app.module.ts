@@ -4,8 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import {PostModule} from './post/post.module';
 import {HttpClientModule} from '@angular/common/http';
+import {CommonModule} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -13,12 +13,13 @@ import {HttpClientModule} from '@angular/common/http';
     NotFoundComponent,
   ],
   imports: [
+    CommonModule,
     HttpClientModule,
     BrowserModule,
-    PostModule,
     AppRoutingModule,
   ],
   providers: [],
+  exports: [AppComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
