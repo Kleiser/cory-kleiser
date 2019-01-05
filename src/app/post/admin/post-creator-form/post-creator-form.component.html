@@ -1,0 +1,30 @@
+<form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+  <section formGroupName="author">
+    <h2>Your Info</h2>
+    <label>Name:
+      <input type="text" formControlName="fullName" required>
+    </label>
+    <label>Description (optional):
+      <input type="text" formControlName="description" required>
+    </label>
+  </section>
+  <section formGroupName="post">
+    <h2>Your Post</h2>
+    <label>Title:
+      <input type="text" formControlName="title" required>
+    </label>
+    <label>Subtitle:
+      <input type="text" formControlName="subtitle" required>
+    </label>
+    <div formArrayName="tags">
+      <h3>Tags:</h3>
+      <button (click)="addTag()" type="button">Add Tag</button>
+      <div *ngFor="let tag of tags.controls; let i = index">
+        <label>Tag:
+          <input type="text" [formControlName]="i">
+        </label>
+      </div>
+    </div>
+  </section>
+  <button type="submit" [disabled]="!postForm.valid">Publish</button>
+</form>
