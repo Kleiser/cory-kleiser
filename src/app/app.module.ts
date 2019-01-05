@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import {HttpClientModule} from '@angular/common/http';
 import {CommonModule} from '@angular/common';
+import {AuthGuard} from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import {CommonModule} from '@angular/common';
     BrowserModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [AuthGuard],
   exports: [AppComponent],
   bootstrap: [AppComponent]
 })
