@@ -16,7 +16,8 @@ export class AuthGuard implements CanActivate, CanLoad {
   }
 
   private canEnterRoute() {
-    return false;
+    // TODO: implement AUTH service here
+    return true;
   }
 
 }

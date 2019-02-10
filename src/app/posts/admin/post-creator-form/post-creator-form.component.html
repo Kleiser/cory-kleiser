@@ -16,6 +16,9 @@
     <label>Subtitle:
       <input type="text" formControlName="subtitle" required>
     </label>
+    <label>Body:
+      <textarea formControlName="body" cols="30" rows="10"></textarea>
+    </label>
     <div formArrayName="tags">
       <h3>Tags:</h3>
       <button (click)="addTag()" type="button">Add Tag</button>
