@@ -5,24 +5,20 @@ import {PostListingComponent} from './post-listing/post-listing.component';
 import {PostsRoutingModule} from './posts-routing.module';
 import {PostService} from './post.service';
 import {PostDataResolver} from './post-resolver.service';
-import { PostCreatorFormComponent } from './admin/post-creator-form/post-creator-form.component';
-import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
     PostListingComponent,
-    PostDetailComponent,
-    PostCreatorFormComponent
+    PostDetailComponent
   ],
   imports: [
     CommonModule,
     PostsRoutingModule,
-    ReactiveFormsModule
   ],
   providers: [
     PostService,
     PostDataResolver,
   ],
-  bootstrap: [PostListingComponent, PostDetailComponent, PostCreatorFormComponent]
+  bootstrap: [PostListingComponent, PostDetailComponent]
 })
 export class PostsModule { }
